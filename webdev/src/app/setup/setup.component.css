@@ -1,0 +1,80 @@
+#setup-box {
+
+  margin: 0 auto;
+  height: 400px;
+  width: 800px;
+  border: 1px solid;
+  border-radius: 5px 5px 0 0;
+}
+
+#setup-title {
+  margin-top: 8px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 23px;
+}
+
+#setup-description {
+  padding-top: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+#url-textinput {
+  padding-top: 40px;
+  margin: 0 auto;
+  text-align: left;
+  width: 500px;
+}
+
+#url-textinput-help {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 5px;
+}
+
+#private-token-textinput {
+  padding-top: 40px;
+  margin: 0 auto;
+  text-align: left;
+  width: 500px;
+}
+
+#private-token-help {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 5px;
+}
+
+#test-connection-button {
+  padding-top: 40px;
+  padding-left: 200px;
+  text-align: left;
+  width: 200px;
+}
+
+#forward-button {
+  margin-top: -27px;
+  margin-left: 500px;
+  width: 150px;
+}
+
+#url-textinput-error {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 5px;
+  font-size: 10px;
+  color: red;
+}
+
+#private-token-textinput-error {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 5px;
+  font-size: 10px;
+  color: red;
+}
+
+#test-connection-successful {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-top: 5px;
+  font-size: 10px;
+  color: green;
+}

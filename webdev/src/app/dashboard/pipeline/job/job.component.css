@@ -1,0 +1,65 @@
+#job {
+  position: relative;
+  height: 150px;
+  width: auto;
+  background-color: white;
+  min-width: 175px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#job-status {
+  color: white;
+  width: auto;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  background-color: green;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#build-url {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 4px;
+  padding-top: 4px;
+  padding-right: 2px;
+  color: black;
+}
+
+#build-url a {
+  color: black;
+}
+
+#build-url a:hover {
+  color: blue;
+}
+
+#job-details {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#job-details a {
+  text-decoration: none;
+  color: black;
+}
+
+#job-details a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+#job-duration {
+  font-size: 10px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+

@@ -1,0 +1,17 @@
+@import './../../styles/variables';
+
+#pipelines li {
+  margin: 50px 50px 50px 50px;
+}
+
+#paginator {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+#loading {
+  font-size: 40px;
+  margin-left: 48%;
+  margin-top: 10%;
+}

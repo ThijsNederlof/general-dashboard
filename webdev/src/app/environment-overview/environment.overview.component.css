@@ -1,0 +1,11 @@
+#environment {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#loading {
+  font-size: 40px;
+  margin-left: 48%;
+  margin-top: 10%;
+}

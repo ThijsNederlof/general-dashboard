@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="job">
+  <div id="job-status" [ngStyle]="{'background-color': getJobStatusColor()}">
+    {{name}}
+  </div>
+  <div id="job-duration">
+    <div>Created at: {{created_at | date:"HH:ss dd/MM/yy"}}</div>
+    <div *ngIf="finished_at && started_at">Finished in: {{finished_at | amDifference : started_at : 'seconds'}}
+      seconds
+    </div>
+    <div *ngIf="status == 'skipped'">Skipped</div>
+    <div *ngIf="status == 'canceled'">Canceled</div>
+    <div *ngIf="status == 'failed'">Failed</div>
+  </div>
+  <div id="job-details" *ngIf="runner">
+    <ul>
+      <li>
+        <img src="{{user.avatar_url}}" class='img-circle' width="17px" height="17px"> {{user.name}}
+      </li>
+      <li><br></li>
+      <li>
+        <i class="fa fa-gitlab" aria-hidden="true"></i> runner ID #{{runner.id}}
+      </li>
+      <li *ngIf="artifacts_file">
+        <i class="fa fa-download" aria-hidden="true"></i><a href="{{stateStore.gitlabInformation.gitBaseUrl}}/{{stateStore.selectedProject.selectedProjectGroup}}/{{stateStore.selectedProject.selectedProjectName}}/builds/{{id}}/artifacts/download{{stateStore.gitlabInformation.privateToken}}">
+        artifacts</a>
+      </li>
+    </ul>
+  </div>
+  <div id="build-url" *ngIf="status != 'skipped'">
+    <a target="_blank"
+      href="{{stateStore.gitlabInformation.gitbaseurl}}/{{stateStore.selectedProject.selectedProjectGroup}}/{{stateStore.selectedProject.selectedProjectName}}/builds/{{id}}"><i
+      class="fa fa-external-link" aria-hidden="true"></i></a>
+  </div>
+</div>
+</body>
+</html>

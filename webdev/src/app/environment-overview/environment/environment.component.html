@@ -1,0 +1,36 @@
+<div id="environment">
+  <div id="environment-name">
+    <div>Environment: {{name}}
+      <div id="environment-button" *ngIf="external_url"><a target="_blank" href="{{external_url}}"><i
+        class="fa fa-external-link" aria-hidden="true"></i>
+      </a></div>
+    </div>
+  </div>
+  <div id="deployments">
+    <p-dataTable [value]="deployments" rowTrackBy="id" resizableColumns="true" columnResizeMode="fit" [responsive]="true" sortField="deployable.finished_at" sortOrder="-1">
+      <p-header>Deployments</p-header>
+      <p-column field="sha" header="SHA" [style]="{'text-align': 'center', 'width': '100px'}">
+        <ng-template let-col let-deployment="rowData" pTemplate="body">
+          {{deployment.sha.substring(0, 8) }}
+        </ng-template>
+      </p-column>
+      <p-column field="deployable.status" header="Status" [style]="{'text-align': 'center', 'width': '100px'}"></p-column>
+      <p-column field="deployable.finished_at" header="Deployed at" [style]="{'text-align': 'center', 'width': '170px'}">
+        <ng-template let-col let-deployment="rowData" pTemplate="body">
+          {{deployment.deployable.finished_at | date: 'HH:mm - dd-MM-yyyy'}}
+        </ng-template>
+      </p-column>
+      <p-column field="deployable.user.name" header="Deployed by" [style]="{'text-align': 'center', 'width': '220px'}">
+        <ng-template let-col let-deployment="rowData" pTemplate="body">
+         <img class="avatar_img" src="{{deployment.deployable.user.avatar_url}}"> {{deployment.deployable.user.name}}
+        </ng-template>
+      </p-column>
+      <p-column field="deployable.commit.title" header="Commit message" [style]="{'text-align': 'left', 'width': 'auto'}" >
+        <ng-template let-col let-deployment="rowData" pTemplate="body">
+          {{deployment.deployable.commit.title}}
+        </ng-template>
+      </p-column>
+    </p-dataTable>
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div *ngIf="stateStore.selectedProject.selectedProjectName" id="projectbar">
+  <div id="selectprojectname">
+    <button (click)="deselectProject()" class="button"><i class="fa fa-times" aria-hidden="true"></i></button>
+    Selected project: {{stateStore.selectedProject.selectedProjectGroup}} / {{stateStore.selectedProject.selectedProjectName}}
+  </div>
+    <div id="navigation">
+      <nav>
+        <ul>
+          <li>
+            <b [routerLink]=" ['./dashboard'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              DASHBOARD
+            </b>
+          </li>
+          <li>
+            <b [routerLink]=" ['./environments'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              ENVIRONMENTS
+            </b>
+          </li>
+          <!--<li>-->
+            <!--<b [routerLink]=" ['./analytics'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">-->
+              <!--ANALYTICS-->
+            <!--</b>-->
+          <!--</li>-->
+        </ul>
+      </nav>
+    </div>
+</div>

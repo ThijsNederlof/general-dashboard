@@ -1,0 +1,29 @@
+#environment {
+  margin: auto;
+  display: block;
+  min-width: 500px;
+  border: 1px solid black;
+  border-radius: 5px 5px 0 0;
+}
+
+#environment-name {
+  padding-top: 8px;
+  margin-left: 40px;
+  font-size: 35px;
+  padding-bottom: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#environment-button {
+  top: auto;
+  float: right;
+  padding-right: 8px;
+}
+
+.avatar_img {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+}
+
+

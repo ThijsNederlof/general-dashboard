@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="pipeline-details" class="capitalize" [ngStyle]="{'background-color': getPipelineDetailsColor()}">
+  <ul>
+    <li>
+      <i class="fa fa-times" *ngIf="status.match('failed')" aria-hidden="true"></i>
+      <i class="fa fa-times" *ngIf="status.match('skipped')" aria-hidden="true"></i>
+      <i class="fa fa-check" *ngIf="status.match('passed')" aria-hidden="true"></i>
+      <i class="fa fa-spinner fa-spin" *ngIf="status.match('running')" aria-hidden="true"></i>
+      {{status}}
+    </li>
+
+    <li>
+      <i class="fa fa-code-fork" aria-hidden="true"></i>
+      {{ref}}
+    </li>
+
+    <li>
+      <i class="fa fa-code" aria-hidden="true"></i>
+      {{sha.substring(0, 8)}}
+    </li>
+
+    {{user}}
+
+  </ul>
+</div>
+<div id="pipeline-actions" [ngStyle]="{'background-color': getPipelineDetailsColor()}">
+  <ul>
+    <li *ngIf="status.match('failed') || status.match('skipped') || status.match('canceled')">
+      <button (click)="retryPipeline()" class="button"><i class="fa fa-repeat" aria-hidden="true"></i> Retry</button>
+    </li>
+    <li *ngIf="status.match('running') || status.match('created') || status.match('pending')">
+      <button (click)="cancelPipeline()" class="button"><i class="fa fa-ban" aria-hidden="true"></i> Stop</button>
+    </li>
+  </ul>
+</div>
+<div id="pipeline" [ngStyle]="{'background-color': getPipelineColor()}">
+  <ul>
+    <li *ngFor="let job of jobs | myOrderByPipe; trackBy: trackJob">
+      <job [id]="job.id" [status]="job.status" [created_at]="job.created_at" [artifacts_file]="job.artifacts_file"
+           [name]="job.name" [stage]="job.stage" [started_at]="job.started_at" [finished_at]="job.finished_at"
+           [runner]="job.runner" [user]="job.user"></job>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

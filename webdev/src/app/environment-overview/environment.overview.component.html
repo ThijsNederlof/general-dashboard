@@ -1,0 +1,7 @@
+<div id="loading" *ngIf="!environments"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span></div>
+<div id="environment-overview" *ngIf="environments">
+  <div id="environment" *ngFor="let environment of environments; trackBy: trackEnvironment">
+    <environment [id]="environment.id" [name]="environment.name" [external_url]="environment.external_url"></environment>
+  </div>
+</div>

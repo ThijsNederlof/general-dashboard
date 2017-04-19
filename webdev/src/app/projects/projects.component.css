@@ -1,0 +1,18 @@
+#projectsoverview {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+#loading {
+  font-size: 40px;
+  margin-left: 48%;
+  margin-top: 10%;
+}
+
+.loading {
+  font-size: 40px;
+  margin-left: 48%;
+  margin-top: 10%;
+}

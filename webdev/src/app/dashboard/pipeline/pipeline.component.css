@@ -1,0 +1,91 @@
+#pipeline {
+  height: auto;
+  width: auto;
+  margin-left: 50px;
+  margin-top: -3px;
+  padding: 30px 30px;
+}
+
+#pipeline-details {
+  color: white;
+  margin-left: 50px;
+  width: auto;
+  padding-left: 10px;
+  border-radius: 5px 5px 0px 0px;
+  padding-right: 20px;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+#pipeline-details ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#pipeline-details li {
+  float: left;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+
+#pipeline ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#pipeline li {
+  float: left;
+  padding: 5px 15px 15px 5px;
+}
+
+#pipeline-actions {
+  color: white;
+  margin-left: 5px;
+  width: auto;
+  padding-left: 5px;
+  border-radius: 5px 5px 0 0;
+  padding-right: 10px;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#pipeline-actions ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#pipeline-actions li {
+  float: left;
+  padding-left: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.button {
+  width: auto;
+  height: auto;
+  border: none;
+  background: none;
+  text-align: center;
+}
+
+.button:hover {
+  transition: color 0.5s ease;
+  color: #02B8FA;
+}
+
+
+
+
+

@@ -1,0 +1,41 @@
+@import './../../styles/variables';
+
+#projectbar {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: $projectbar-color;
+  display: block;
+  padding: 10px;
+}
+
+#selectprojectname {
+  margin-left: 1vw;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.button {
+  width: auto;
+  height: auto;
+  border: none;
+  background: none;
+  text-align: center;
+}
+
+#navigation li {
+  float: left;
+}
+
+#navigation {
+  margin-top: -15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+#navigation ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+
+
+

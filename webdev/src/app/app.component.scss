@@ -1,0 +1,123 @@
+@import './../styles/variables';
+
+a.active {
+  background-color: $nav-button-active-color;
+}
+
+a {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+nav {
+  margin-top: 16px;
+}
+
+nav a {
+  background-color: $nav-button-color;
+  color: white;
+  padding: 15px 15px;
+  margin: 0px;
+  font-size: 15px;
+  //vertical-align: middle;
+  //text-align: center;
+  text-decoration: none;
+
+}
+
+#setup {
+  padding-top: 40px;
+}
+
+#logo {
+  position: absolute;
+  color: white;
+}
+
+#projectsbutton {
+  margin-left: 160px;
+  margin-top: -0px;
+}
+
+#settingsbutton {
+  position: absolute;
+  margin-top: -16px;
+  right: 0px;
+}
+
+nav b {
+  font-weight: bold;
+  background-color: $projectbar-color;
+  color: black;
+  padding: 10px 10px;
+  margin: 0px;
+  font-size: 15px;
+  text-decoration: none;
+
+}
+
+b:hover {
+  color: #d16a44;
+
+}
+
+b.active {
+  color: #4960ff;
+  outline: none;
+}
+
+#menubar a:hover {
+  transition: background-color 0.6s ease;
+  background-color: $nav-button-hover-color;
+}
+
+#menubar {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: $menubar-color;
+  display: block;
+  padding: 15px;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+

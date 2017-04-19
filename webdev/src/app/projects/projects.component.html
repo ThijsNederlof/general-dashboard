@@ -1,0 +1,27 @@
+<div id="loading" class="loading" *ngIf="!projects && stateStore.gitlabInformation.setupCompleted"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>
+<!--<div id="loading-server-information" class="loading" *ngIf="!stateStore.gitlabInformation.setupCompleted"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>-->
+
+<div id="projectsoverview" *ngIf="projects">
+  <p-dataTable [value]="projects" selectionMode="single" [(selection)]="selectedproject"
+               (onRowSelect)="onSelectProject($event)">
+    <p-header>Gitlab Projects</p-header>
+    <p-column field="name_with_namespace" [style]="{'text-align': 'center', 'width': 'auto'}"
+              header="Group / Project"></p-column>
+    <p-column field="created_at" [style]="{'text-align': 'center', 'width': 'auto'}" header="Creation date">
+      <ng-template let-col let-project="rowData" pTemplate="body">
+        {{project.created_at |date:'hh:mm - dd-MM-yyyy' }}
+      </ng-template>
+    </p-column>
+    <p-column field="last_activity_at" [style]="{'text-align': 'center', 'width': 'auto'}" header="Last activity">
+      <ng-template let-col let-project="rowData" pTemplate="body">
+        {{project.last_activity_at |date:'hh:mm - dd-MM-yyyy' }}
+      </ng-template>
+    </p-column>
+    <p-column field="http_url_to_repo" [style]="{'text-align': 'center', 'width': '10%'}" header="Repository">
+      <ng-template let-col let-project="rowData" pTemplate="body">
+        <a href="{{project.http_url_to_repo}}" TARGET="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+</div>
+

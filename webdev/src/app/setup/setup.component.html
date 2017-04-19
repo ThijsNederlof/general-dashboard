@@ -1,0 +1,27 @@
+<div id="setup-box">
+  <div id="setup-title">
+  Setup required!
+  </div>
+  <div id="setup-description">
+    It seems this is the first time General Desktop is run.<br>
+    Please enter the location of your Gitlab installation and private-token.
+  </div>
+  <div id="url-textinput">
+    <div id="url-textinput-help"> Link to your Gitlab installation. (http://git.com)</div>
+    <input type="text" size="60" pInputText [(ngModel)]="gitlabSetupUrl" />
+    <div id="url-textinput-error" *ngIf="gitlabUrlError"> Can't reach this url</div>
+  </div>
+  <div id="private-token-textinput">
+    <div id="private-token-help"> Private Token</div>
+    <input type="text" size="60" pInputText [(ngModel)]="gitlabSetupPrivateToken" />
+    <div id="private-token-textinput-error" *ngIf="gitlabPrivateTokenError"> Private-token incorrect </div>
+  </div>
+  <div id="test-connection-button">
+    <button pButton type="button" (click)="testGitlabSetupUrl()" label="Test connection"></button>
+  </div>
+  <div id="forward-button">
+    <button pButton type="button" [disabled]="fieldsInvalid" (click)="saveSettings()" label="Save"></button>
+    <div id="test-connection-successful" *ngIf="!fieldsInvalid"> Test successful </div>
+  </div>
+</div>
+
