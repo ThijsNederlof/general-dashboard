@@ -54,3 +54,11 @@ To generate the jar yourself:
 * run "mvn clean package"
 * The build jar file resides in the new target folder
 ```
+
+Run development environment:
+
+```
+* From the project root directory cd into the webdev directory
+* Run " npm run server:dev " to run development server
+* Start the main class in src/main/java/main to run the backend
+```
