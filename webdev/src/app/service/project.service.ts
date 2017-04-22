@@ -16,7 +16,7 @@ export class ProjectService {
     headers.append('PRIVATE-TOKEN', this.stateStore.gitlabInformation.privateToken);
     let options = new RequestOptions({headers});
 
-    return this.http.get(this.stateStore.gitlabInformation.gitBaseUrl + this.stateStore.gitlabInformation.api, options)
+    return this.http.get(this.stateStore.gitlabInformation.gitBaseUrl + this.stateStore.gitlabInformation.api + '?per_page=500', options)
       .map(this.extractData)
       .catch(this.handleError);
   }

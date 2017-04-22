@@ -88,7 +88,7 @@ export class PipelineComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     if (this.stateStore.gitlabInformation.gitBaseUrl !== '') {
-      this.jobReloader = Observable.interval(20 * 60).subscribe((x) => {
+      this.jobReloader = Observable.interval(50 * 60).subscribe((x) => {
         this.jobService.getJobs(this.id).subscribe(
           (job) => this.jobs = job);
       });

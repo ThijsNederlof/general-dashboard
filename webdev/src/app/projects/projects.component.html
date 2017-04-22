@@ -1,12 +1,16 @@
 <div id="loading" class="loading" *ngIf="!projects && stateStore.gitlabInformation.setupCompleted"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>
 <!--<div id="loading-server-information" class="loading" *ngIf="!stateStore.gitlabInformation.setupCompleted"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>-->
 
+
 <div id="projectsoverview" *ngIf="projects">
+  <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+    <input #gb type="text" pInputText size="50" placeholder="Find project">
+  </div>
   <p-dataTable [value]="projects" selectionMode="single" [(selection)]="selectedproject"
-               (onRowSelect)="onSelectProject($event)">
-    <p-header>Gitlab Projects</p-header>
+               (onRowSelect)="onSelectProject($event)" [globalFilter]="gb" #dt>
     <p-column field="name_with_namespace" [style]="{'text-align': 'center', 'width': 'auto'}"
-              header="Group / Project"></p-column>
+              header="Group / Project" filterMatchMode="contains"></p-column>
     <p-column field="created_at" [style]="{'text-align': 'center', 'width': 'auto'}" header="Creation date">
       <ng-template let-col let-project="rowData" pTemplate="body">
         {{project.created_at |date:'hh:mm - dd-MM-yyyy' }}

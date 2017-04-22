@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   public ngOnInit() {
-    this.pipelineReloader = Observable.interval(20 * 60).subscribe((x) => {
+    this.pipelineReloader = Observable.interval(50 * 60).subscribe((x) => {
       this.pipelineService.getPipelines(this.stateStore.selectedProject.selectedProjectId, this.currentpage, this.paginator.rows).subscribe(
         (pipeline) => {
           this.pipelines = pipeline;

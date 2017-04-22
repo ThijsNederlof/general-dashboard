@@ -1,5 +1,56 @@
-# general-dashboard
-A Jenkins-like dashboard for Gitlab CI
+# General-Dashboard
+A Jenkins-like dashboard for Gitlab 9.x
+
+Created with:
+
+* Angular 4
+* Spark Java framework
 
 
-Readme coming soon.
+
+
+
+## Running General-Dashboard
+
+#### Prerequisite
+
+* Gitlab 9.x or higher
+
+General-Dashboard is based upon the Gitlab 9.x API. 
+Hence older versions of Gitlab are not supported.
+
+* Java JRE/SDK 8
+
+* Using the executable jar:
+```
+* Download the jar file from the releases here:
+https://github.com/ThijsNederlof/general-dashboard/releases
+
+* From the terminal or script run the jar file with: java -jar general-dashboard-1.0.jar
+```
+
+* Using Docker
+
+```
+Docker run thijsnederlof/general-dashboard:latest
+```
+
+## Development
+
+Dependencies:
+
+* Java SDK 8.x
+* Node.js 6.10.0 or higher
+* NPM 3.10 or higher
+* Maven 3 or higher
+
+To generate the jar yourself:
+
+```
+* Clone the repository
+* From the project root directory cd into the webdev directory
+* run " npm run clean:install " to install the webdevelopment dependencies
+* cd back to the project root directory
+* run "mvn clean package"
+* The build jar file resides in the new target folder
+```

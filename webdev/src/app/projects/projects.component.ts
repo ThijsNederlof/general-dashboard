@@ -54,7 +54,7 @@ export class ProjectsComponent implements OnInit, OnDestroy, DoCheck {
     this.projectService.getProjects().subscribe(
       (projects) => this.projects = projects);
 
-    this.projectReloader = Observable.interval(20 * 60).subscribe((x) => {
+    this.projectReloader = Observable.interval(80 * 60).subscribe((x) => {
       this.projectService.getProjects().subscribe(
         (projects) => this.projects = projects);
     });
