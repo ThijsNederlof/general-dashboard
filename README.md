@@ -27,12 +27,14 @@ Hence older versions of Gitlab are not supported.
 https://github.com/ThijsNederlof/general-dashboard/releases
 
 * From the terminal or script run the jar file with: java -jar general-dashboard-1.0.jar
+* Visit localhost:8080
 ```
 
 * Using Docker
 
 ```
-Docker run thijsnederlof/general-dashboard:latest
+* docker run -p 8080:8080 thijsnederlof/generaldashboard
+* Visit localhost:8080
 ```
 
 ## Development

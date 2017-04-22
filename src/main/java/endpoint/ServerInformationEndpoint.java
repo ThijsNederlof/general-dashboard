@@ -20,7 +20,6 @@ public class ServerInformationEndpoint {
             input = new FileInputStream("setup.properties");
             prop.load(input);
 
-            String jsonResponse;
             ServerInformationModel serverInformationModel = null;
             if(Objects.equals(prop.getProperty("setupcompleted"), "false")) {
                 serverInformationModel = new ServerInformationModel("", "", "", false);
@@ -29,8 +28,7 @@ public class ServerInformationEndpoint {
 
             }
 
-
-
+            String jsonResponse;
             return jsonResponse = new Gson().toJson(serverInformationModel);
         });
     }
