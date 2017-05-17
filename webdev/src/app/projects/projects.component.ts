@@ -16,6 +16,8 @@ export class ProjectsComponent implements OnInit, OnDestroy, DoCheck {
 
   public selectedproject: Project;
 
+  public id: number;
+
   private projectLoaderEnabled: boolean = false;
 
   private projectReloader: any;
@@ -48,6 +50,18 @@ export class ProjectsComponent implements OnInit, OnDestroy, DoCheck {
     if (this.projectReloader.closed) {
       this.projectReloader.unsubscribe();
     }
+  }
+
+  public findProject() {
+    this.projectService.getProjectById(this.id).subscribe(
+      (project) => {
+        console.log(project);
+        this.stateStore.selectedProject = {
+          selectedProjectId: project.id,
+          selectedProjectName: project.name_with_namespace,
+          selectedProjectGroup: ""
+        };
+      });
   }
 
   private startProjectReloader() {

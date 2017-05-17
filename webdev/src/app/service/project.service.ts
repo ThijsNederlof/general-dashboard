@@ -16,7 +16,18 @@ export class ProjectService {
     headers.append('PRIVATE-TOKEN', this.stateStore.gitlabInformation.privateToken);
     let options = new RequestOptions({headers});
 
-    return this.http.get(this.stateStore.gitlabInformation.gitBaseUrl + this.stateStore.gitlabInformation.api + '?per_page=500', options)
+    return this.http.get(this.stateStore.gitlabInformation.gitBaseUrl + this.stateStore.gitlabInformation.api + '?per_page=12000', options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  public getProjectById(id: number): Observable<Project> {
+
+    let headers: Headers = new Headers();
+    headers.append('PRIVATE-TOKEN', this.stateStore.gitlabInformation.privateToken);
+    let options = new RequestOptions({headers});
+
+    return this.http.get(this.stateStore.gitlabInformation.gitBaseUrl + this.stateStore.gitlabInformation.api + '/' + id, options)
       .map(this.extractData)
       .catch(this.handleError);
   }

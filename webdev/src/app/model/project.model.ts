@@ -1,5 +1,6 @@
 export interface Project {
   id: number;
+  name: string;
   name_with_namespace: string;
   created_at: Date;
   last_activity_at: Date;
